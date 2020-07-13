@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from './models/app.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ngelementscommunication';
+  emp: Employee;
+  constructor() {
+    this.emp = new Employee(0, '' , 0);
+  }
+  getEmployee(event): void {
+    this.emp = event.detail;
+    console.log('In App Component'+ JSON.stringify(this.emp));
+  }
 }

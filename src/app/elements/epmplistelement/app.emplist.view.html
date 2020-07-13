@@ -1,0 +1,15 @@
+<h2>List of Employees</h2>
+<div class="container">
+    <table class="table table-bordered table-striped table-dark">
+        <thead>
+            <tr>
+                <th *ngFor="let h of headers">{{h}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emps" (click)="getSelectedEmp(e)">
+                <th *ngFor="let h of headers">{{e[h]}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
